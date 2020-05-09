@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Events Page</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- <link href="css/font-awesome.css" rel="stylesheet" /> -->
+    <style>
+        li {
+            list-style: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container col-10 offset-1 mt-5">
+        <div>
+            <p class="h3 alert alert-primary">List Events</p>
+        </div>
+        <div>
+            <table class="table table-info">
+                <tr>
+                    <th class="pl-5">#</th>
+                    <th class="pl-5">Name</th>
+                    <th class="pl-5">MainSpeaker</th>
+                    <th class="pl-5">OtherSpeakers</th>
+                </tr>
+
+                <% event.forEach((element)=>{ %>
+                <tr>
+                    <td class="pl-5 pb-5 pt-3"><%= element._id %></td>
+                    <td class="pl-5 pb-5 pt-3"><%= element.title %></td>
+                    <td class="pl-5 pb-5 pt-3"><%= element.mainSpeaker.userName %></td>
+                    <td class="pl-5 pb-5 pt-3" rowspan="2">
+                        <ul>
+                            <li><%= element.otherSpeakers[0].userName %></li>
+                            <li><%= element.otherSpeakers[1].userName %></li>
+                        </ul>
+                    </td>
+                    <td><a href="/events/update/<%= element.id %> " class="btn-primary btn-lg">Edit</button></td>
+                    <td><a href="#" onclick="deleteEvent(<%= element._id %> , this)"
+                            class="btn-danger btn-lg">Delete</button></td>
+                </tr>
+
+                <% }) %>
+
+
+
+
+            </table>
+        </div>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bootstrap/dist/js/jquery-3.2.1.min.js"></script>
+    <script>
+
+        function deleteEvent(id, obj) {
+            $.ajax({
+                url: "http://localhost:8082/events/delete/" + id,
+                method: "get",
+                dataType: "text",
+                success: function (result) {
+                    $(obj).parents("tr").remove();
+                },
+                error: function (error) {
+                    console.log("Error");
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>

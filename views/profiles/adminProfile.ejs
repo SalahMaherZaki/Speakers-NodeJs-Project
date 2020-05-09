@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>Admin Profile</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success mb-3">
+        <label class="navbar-brand h3">Welcome <%= locals.adminName %></label>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link h4" href="/speakers/list">Speakers <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h4" href="/events/list">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link h4" href="/events/add">Add Event</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div>
+            <a href="/logout" id="logout" class="btn btn-warning btn-lg">Logout</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container col-6 offset-3 mt-5">
+            <div>
+                <p class="h3 alert alert-success"><%= locals.adminName %> Profile</p>
+            </div>
+            <div>
+                <form>
+                    <fieldset disabled>
+                        <div class="input-group mt-3">
+                            <label for="job" class="bg-warning p-2 rounded text-center col-2 mr-2">Job</label>
+                            <input type="text" name="job" class="form-control rounded"
+                                value="MEAN Stack Instructor at ITI Mansoura Branch">
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="city" class="bg-warning p-2 rounded col-2 text-center mr-2">City</label>
+                            <input type="text" name="city" class="form-control rounded" value="Mansoura">
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="street" class="bg-warning p-2 rounded col-2 text-center mr-2">Street</label>
+                            <input type="text" name="street" class="form-control rounded" value="El Galaa Street">
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="building" class="bg-warning p-2 rounded col-2 text-center mr-2">Building</label>
+                            <input type="text" name="building" class="form-control rounded" value="20">
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>

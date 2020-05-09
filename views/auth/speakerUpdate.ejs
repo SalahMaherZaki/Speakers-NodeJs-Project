@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Form of Updating Speaker</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- <link href="css/font-awesome.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-6 offset-3 mt-5">
+            <p class="h3 alert alert-primary">Edit Speaker</p>
+        </div>
+        <div class="col-6 offset-3">
+            <form action="/speakers/update" method="post">
+                <input type="text" name="_id" value="<%= speaker._id %>" readonly class="form-control" placeholder="ID" required>
+                <input type="text" name="address.city" value="<%= speaker.address.city %>" id=""
+                    class="form-control mt-2" placeholder="City" required>
+                <input type="text" name="address.street" value="<%= speaker.address.street %>" id=""
+                    class="form-control mt-2" placeholder="Street" required>
+                <input type="text" name="address.building" value="<%= speaker.address.building %>" id=""
+                    class="form-control mt-2" placeholder="Building" required>
+                <a href="/login"> <input type="submit" value="Update"
+                        class="form-control  btn btn-success btn-lg mt-2"></a>
+
+            </form>
+        </div>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bootstrap/dist/js/jquery-3.2.1.min.js"></script>
+
+</body>
+
+</html>

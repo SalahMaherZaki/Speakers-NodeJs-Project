@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Form of Updating Event</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- <link href="css/font-awesome.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-6 offset-3 mt-5">
+            <p class="h3 alert alert-primary">Edit Event</p>
+        </div>
+        <div class="col-6 offset-3">
+            <form action="/event/update" method="post">
+                <input type="text" name="_id" value="<%= event._id %>" readonly class="form-control" placeholder="ID"
+                    required>
+                <input type="text" name="title" value="<%= event.title %>" id="" class="form-control mt-2"
+                    placeholder="Title" required>
+                <div class="input-group mt-1">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Main Speaker</label>
+                    </div>
+                    <select name="mainSpeaker" value="<%= event.mainSpeaker.userName%>" class="custom-select" required id="inputGroupSelect01">
+                        <% speaker.forEach((element)=>{ %>
+                        <option>
+                            <%= element.userName %>
+                        </option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label class="h6 alert-secondary rounded p-2">Other Speakers</label>
+                    <select name="otherSpeakers" value="<%= event.otherSpeakers.userName %>" class="custom-select mt-1" required multiple>
+                        <% speaker.forEach((element)=>{ %>
+                        <option>
+                            <%= element.userName %>
+                        </option>
+                        <% }) %>
+                    </select>
+                </div>
+
+                <input type="submit" value="Update Event" class="form-control  btn btn-success btn-lg mt-2">
+
+            </form>
+        </div>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bootstrap/dist/js/jquery-3.2.1.min.js"></script>
+
+</body>
+
+</html>

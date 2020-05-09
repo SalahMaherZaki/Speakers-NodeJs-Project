@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>HomePage</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container col-4 offset-4 mt-5">
+        <div>
+            <p class="h3 alert alert-danger">Login</p>
+        </div>
+        <div>
+            <form action="/login" method="POST">
+                <img src="images/login1.jpg" class="rounded mx-auto d-block" alt="..." />
+
+                <input type="text" name="name" class="form-control" placeholder="Username" required>
+                <input type="password" name="password" class="mt-1 form-control" placeholder="Password" required>
+
+                <a href="/login"> <input type="submit" value="Login"
+                        class="mt-1 form-control  btn btn-primary btn-lg"></a>
+                <a href="/register"> <input type="button" value="Register"
+                        class="mt-1 form-control  btn btn-success btn-lg"></a>
+
+            </form>
+        </div>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
+</html>

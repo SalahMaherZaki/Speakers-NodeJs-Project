@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>HomePage</title>
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container col-4 offset-4 mt-5">
+        <div>
+            <p class="h3 alert alert-primary">Registeration</p>
+        </div>
+        <div>
+            <form action="/register" method="post">
+                <input type="text" name="_id" class="form-control" placeholder="ID" required>
+                <input type="text" name="userName" class="form-control mt-1" placeholder="Username" required>
+                <input type="password" name="userPassword" class="form-control mt-1" placeholder="Password" required>
+                <input type="text" name="address.city" class="form-control mt-1" placeholder="City" placeholder="" required>
+                <input type="text" name="address.street" class="form-control mt-1" placeholder="Street" required>
+                <input type="text" name="address.building" class="form-control mt-1" placeholder="Building" required>
+                <a href="/register"> <input type="submit" value="Sign Up"
+                        class="mt-1 form-control  btn btn-primary btn-lg"></a>
+                <a href="/login"> <input type="button" value="Login"
+                        class="mt-1 form-control  btn btn-success btn-lg"></a>
+            </form>
+        </div>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
+</html>
